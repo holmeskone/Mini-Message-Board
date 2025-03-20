@@ -1,0 +1,14 @@
+<html>
+  <body>
+    <ul>
+        <% for (let i = 0; i < message.length; i++) { %>
+          <li>
+            <h3> <%= message[i].user %></h3>
+              <p> <%= message[i].text %> </p>
+              <p><%= message[i].added %></p>
+            </a>
+          </li>
+        <% } %>
+      </ul>
+  </body>
+</html>
