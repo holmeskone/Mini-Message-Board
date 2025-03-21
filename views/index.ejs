@@ -1,11 +1,12 @@
 <html>
   <body>
     <ul>
-        <% for (let i = 0; i < message.length; i++) { %>
+        <% for (let i = 0; i < messages.length; i++) { %>
           <li>
-            <h3> <%= message[i].user %></h3>
-              <p> <%= message[i].text %> </p>
-              <p><%= message[i].added %></p>
+            <h3><%= messages[i].user %></h3>
+              <p><%= messages[i].text %></p>
+              <p><%= messages[i].added %></p>
+              <a href="/<%= messages[i].user %>/<%= messages[i].id %>">Open</a>
             </a>
           </li>
         <% } %>
