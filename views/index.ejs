@@ -1,7 +1,7 @@
 <html>
   <body>
-    <% if (messages.length > 0) { %>
-      <ul>
+      <% if (messages.length > 0) { %>
+        <ul>
         <% messages.forEach(function(message) { %>
           <div>
             <h2><%= message.username %></h2>
@@ -10,12 +10,12 @@
           </div>
         <% }); %>
       </ul>
-    <% } else { %>
-      <div>
-        <p>No messages found. Be the first to create one!</p>
-      </div>
-    <% } %>
-    
-    <a href="/new">Create New Message</a>
+      <% } else { %>
+        <div>
+          <p>No messages found. Be the first to create one!</p>
+        </div>
+      <% } %>
+      
+      <a href="/new">Create</a>
   </body>
 </html>

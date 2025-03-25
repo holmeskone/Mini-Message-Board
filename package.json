@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "deploy": "node db/populatedb.js", 
-    "start": "node app.js", 
-    "postdeploy": "npm run deploy"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
