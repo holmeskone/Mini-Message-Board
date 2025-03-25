@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "initialize": "node db/populatedb.js $DATABASE_URL",
     "start": "node app.js"
   },
   "keywords": [],
