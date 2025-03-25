@@ -10,7 +10,6 @@ async function createMessageGet(req, res) {
 }
 
 async function createMessagePost(req, res){
-    console.log(req.body);
     await db.insertMessage(req.body.messageUser, req.body.messageText);
     res.redirect("/");
 
