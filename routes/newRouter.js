@@ -1,18 +1,12 @@
-const express = require("express");
-const crypto = require('crypto');
-const newRouter = express.Router();
-const { router: indexRouter, messages } = require("./indexRouter");
+const {Router} = require("express");
+const db = require("../db/queries")
+const messageController = require("../controllers/messageController")
+const newRouter = Router();
 
 
 
-newRouter.get("/", (req,res) => {
-    res.render("form");
-});
+newRouter.get("/", messageController.messagesGet);
 
-newRouter.post("/", (req, res) => {
-    console.log(req.body)
-    messages.push({ text: req.body.messageText, user: req.body.messageUser, id: crypto.randomUUID(), added: new Date() });
-    res.redirect("/");
-  });
+// newRouter.post("/", messageController.messagePost);
 
 module.exports = newRouter;
