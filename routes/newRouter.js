@@ -5,8 +5,8 @@ const newRouter = Router();
 
 
 
-newRouter.get("/", messageController.messagesGet);
+newRouter.get("/", messageController.createMessageGet);
 
-// newRouter.post("/", messageController.messagePost);
+newRouter.post("/", messageController.createMessagePost);
 
 module.exports = newRouter;
