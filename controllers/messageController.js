@@ -5,15 +5,20 @@ async function messagesGet(req, res) {
     res.render("index", {messages:messages});
 }
 
+async function createMessageGet(req, res) {
+    res.render("form");
+}
 
-// async function messagePost(req, res) {
-//     console.log(req.body);
-//     await db.insertMessage(req.body.messageUser, req.body.messageText)
-//     messages.push({ text: req.body.messageText, user: req.body.messageUser, id: crypto.randomUUID(), added: new Date() });
-//     res.redirect("/");
-// }
+async function createMessagePost(req, res){
+    console.log(req.body);
+    await db.insertMessage(req.body.messageUser, req.body.messageText);
+    res.redirect("/");
+
+}
 
 
 module.exports = {
-    messagesGet
+    messagesGet,
+    createMessageGet,
+    createMessagePost
 }
