@@ -3,26 +3,23 @@
 const { Client } = require("pg");
 
 const SQL = `
-CREATE TABLE IF NOT EXISTS messages (
-   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-   username VARCHAR(255),
-   text TEXT,
-   added TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE IF NOT EXISTS usernames (
+  id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  username VARCHAR ( 255 )
 );
 
-INSERT INTO messages (text, username, added) 
+INSERT INTO messages (text, "user", added) 
 VALUES 
   ('Hi there!', 'John', NOW()),
-  ('Hello World!', 'Charles', NOW()),
-  ON CONFLICT (messages) DO NOTHING;
+  ('Hello World!', 'Carlos', NOW());
 `;
 
 async function main() {
-    console.log("Seeding database...");
-    const client = new Client({
-      connectionString: process.env.DATABASE_URL,
-      ssl: { rejectUnauthorized: false }
-    });
+  console.log("seeding...");
+  const client = new Client({
+    connectionString: `postgresql://${process.env.PGUSER}:${process.env.PGPASSWORD}@${process.env.PGHOST}:${process.env.PGPORT}/${process.env.PGDATABASE}`,
+    ssl: { rejectUnauthorized: false } 
+  });
   try {
     await client.connect();
     await client.query(SQL);

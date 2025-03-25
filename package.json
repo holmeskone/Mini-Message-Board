@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "postdeploy": "node populatedb.js"
+    "deploy": "node populatedb.js",
+    "postdeploy": "npm run deploy"
   },
   "keywords": [],
   "author": "",
