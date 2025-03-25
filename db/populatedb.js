@@ -20,8 +20,8 @@ VALUES
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString: `postgresql://${process.env.DB_USERNAME}:${process.env.DB_PW}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DATABASENAME}`,
-    // ssl: { rejectUnauthorized: false } 
+    connectionString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false } 
   });
   try {
     await client.connect();
