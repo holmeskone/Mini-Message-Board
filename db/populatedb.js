@@ -3,15 +3,18 @@
 const { Client } = require("pg");
 
 const SQL = `
-CREATE TABLE IF NOT EXISTS usernames (
-  id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-  username VARCHAR ( 255 )
+CREATE TABLE IF NOT EXISTS messages (
+   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+   user VARCHAR(255),
+   text TEXT,
+   added TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 INSERT INTO messages (text, "user", added) 
 VALUES 
   ('Hi there!', 'John', NOW()),
-  ('Hello World!', 'Carlos', NOW());
+  ('Hello World!', 'Charles', NOW());
+  ON CONFLICT (messages) DO NOTHING;
 `;
 
 async function main() {
