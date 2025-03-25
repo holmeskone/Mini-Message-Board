@@ -13,7 +13,8 @@ CREATE TABLE IF NOT EXISTS messages (
 INSERT INTO messages (text, username, added) 
 VALUES 
   ('Hi there!', 'John', NOW()),
-  ('Hello World!', 'Carlos', NOW());
+  ('Hello World!', 'Carlos', NOW())
+  ON CONFLICT DO NOTHING;
 `;
 
 async function main() {
