@@ -1,15 +1,6 @@
 <html>
   <body>
     <ul>
-        <!-- <% for (let i = 0; i < messages.length; i++) { %>
-          <li>
-            <h3><%= messages[i].username %></h3>
-              <p><%= messages[i].text %></p>
-              <p><%= messages[i].added %></p>
-              <a href="/<%= messages[i].username %>/<%= messages[i].id %>">Open</a>
-            </a>
-          </li>
-        <% } %> -->
         <% messages.forEach(function(message) { %>
           <div>
             <h2><%= message.username %></h2>
