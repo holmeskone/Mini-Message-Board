@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "deploy": "node populatedb.js",
+    "start": "node app.js", 
+    "deploy": "node db/populatedb.js", 
     "postdeploy": "npm run deploy"
   },
   "keywords": [],
